@@ -26,13 +26,27 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. Briefly compare and contrast `.forEach` & `.map` (2-3 sentences max)
 
+forEach doesn't return anything, .map returns an array.
+
 2. Explain the difference between a callback and a higher order function.
+High order function can receieve other functions as parameters.
+Callback function are functions that are passed into other functions as arguments
 
 3. What is closure?
+The combination of a fuction and the lexical enviroment within which that function was declared.
 
 4. Describe the four rules of the 'this' keyword.
 
+  1. When in the global scope, the value of “this” will be the window/console Object;
+  2. Implicit binding, most common used rule, and when the function is invoked, we look to the 
+  left of the dot, that is 'this' refer to
+  3. Explicit binding: Whenever we use JavaScript’s call or apply method, 
+  this is explicitly defined.
+  4. New Binding- using the new keyword construct a new object and 'this' points to it.
+
 5. Why do we need super() in an extended class?
+ 
+ we want to inherit the parent's constructor.
 
 ### Task 1 - Project Set up
 

@@ -17,36 +17,59 @@ const zooAnimals = [
 
 /* Request 1: .forEach()
 
-The zoos want to display both the scientific name and the animal name in front of the habitats. Populate the displayNames array with only the animal_name and scientific_name of each animal. displayNames will be an array of strings, and each string should follow this pattern: "Name: Jackal, asiatic, Scientific: Canis aureus."
+The zoos want to display both the scientific name and the animal name in front of the habitats.
+ Populate the displayNames array with only the animal_name and scientific_name of each animal. 
+ displayNames will be an array of strings, and each string should follow this pattern: "Name: Jackal, asiatic, 
+ Scientific: Canis aureus."
 
 */
-const displayNames = [];
+const displayNames =zooAnimals.map((info)=>{
+  return {Name:info.animal_name,Scientific: info.scientific_name};
+})
+console.log('Arrays-callbacks request 1 : .forEach()');
 console.log(displayNames);
 
 /* Request 2: .map()
 
-The zoos need a list of all their animal's names (animal_name only) converted to lower case. Using map, create a new array of strings named lowCaseAnimalNames, each string following this pattern: "jackal, asiatic". Log the resut.
+The zoos need a list of all their animal's names (animal_name only) converted to lower case. 
+Using map, create a new array of strings named lowCaseAnimalNames, 
+each string following this pattern: "jackal, asiatic". Log the resut.
 
 */
 
-const lowCaseAnimalNames = [];
+const lowCaseAnimalNames=zooAnimals.map((info)=>{
+  return info.animal_name.toLowerCase();
+});
+console.log('Arrays-callbacks request 2: .map()');
 console.log(lowCaseAnimalNames);
 
 /* Request 3: .filter() 
 
-The zoos are concerned about animals with a lower population count. Using filter, create a new array of objects called lowPopulationAnimals which contains only the animals with a population less than 5.
+The zoos are concerned about animals with a lower population count. Using filter, 
+create a new array of objects called lowPopulationAnimals which contains only the animals with a
+ population less than 5.
 
 */
-const lowPopulationAnimals = [];
+const lowPopulationAnimals =zooAnimals.filter((info)=>{
+  return info.population<5;
+});
+console.log('Arrays-callbacks request 3: .filter() ');
 console.log(lowPopulationAnimals);
 
 /* Request 4: .reduce() 
 
-The zoos need to know their total animal population across the United States. Find the total population from all the zoos using the .reduce() method. Remember the reduce method takes two arguments: a callback (which itself takes two args), and an initial value for the count.
+The zoos need to know their total animal population across the United States. 
+Find the total population from all the zoos using the .reduce() method.
+ Remember the reduce method takes two arguments: a callback (which itself takes two args), 
+ and an initial value for the count.
 
 */
-const populationTotal = 0;
-console.log(populationTotal);
+const populationTotal = zooAnimals.reduce((total,info)=>{
+ return total+info.population;
+},0);
+
+console.log('Arrays-callbacks request 4: .reduce() ');
+console.log('The total animal population is:' + populationTotal);
 
 
 // ==== Callbacks ====  
