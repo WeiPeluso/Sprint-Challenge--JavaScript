@@ -23,8 +23,9 @@ The zoos want to display both the scientific name and the animal name in front o
  Scientific: Canis aureus."
 
 */
-const displayNames =zooAnimals.map((info)=>{
-  return {Name:info.animal_name,Scientific: info.scientific_name};
+const displayNames=[];
+zooAnimals.forEach((info)=>{
+  displayNames.push({Name:info.animal_name,Scientific: info.scientific_name});
 })
 console.log('Arrays-callbacks request 1 : .forEach()');
 console.log(displayNames);
